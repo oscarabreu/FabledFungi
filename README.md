@@ -1,2 +1,2 @@
-# FabledFungis
+# FabledFungi
 API Deployment
