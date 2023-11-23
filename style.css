@@ -7,23 +7,26 @@
 body {
     background-color: #9b8c7d;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Reset the default margin on the body */
+    padding: 4rem 0; /* Add spacing at the top and bottom of the body */
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: flex-start; /* Align the container to the top */
 }
+
 .container {
     background-color: #ffffff;
     font-size: 16px;
-    padding: 3em 1em; /* Adjusted side padding for better fit on mobile */
-    width: 90vw;
-    max-width: 32em;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
+    padding: 2em 1em;
     border-radius: 0.6em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: added a subtle shadow for depth */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Allow the container to grow as much as needed */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 img {
     display: block;
     width: 100%; /* Changed to 100% for better scaling on smaller screens */
+    max-height: 70vh; /* Set a maximum height relative to the viewport height */
     height: auto; /* Maintain aspect ratio */
     margin: 1.8em auto 0 auto;
 }
