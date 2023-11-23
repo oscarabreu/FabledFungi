@@ -3,14 +3,15 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-  }
-  body {
+}
+body {
     background-color: #9b8c7d;
-  }
-  .container {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.container {
     background-color: #ffffff;
     font-size: 16px;
-    padding: 3em 2.8em;
+    padding: 3em 1em; /* Adjusted side padding for better fit on mobile */
     width: 90vw;
     max-width: 32em;
     position: absolute;
@@ -18,56 +19,48 @@
     left: 50%;
     top: 50%;
     border-radius: 0.6em;
-  }
-  img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: added a subtle shadow for depth */
+}
+img {
     display: block;
-    width: 50%;
+    width: 100%; /* Changed to 100% for better scaling on smaller screens */
+    height: auto; /* Maintain aspect ratio */
     margin: 1.8em auto 0 auto;
-  }
-  .Mushroom-Name {
+}
+.Mushroom-Name, .Title {
     text-align: center;
     font-weight: bold;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    display: block; /* Change from "inline-block" to "block" to center block-level elements */
-    margin: 0 auto; /* Set the left and right margins to "auto" to horizontally center */
-    max-width: 100%; /* Optionally, set a maximum width if needed */
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
     color: #4f403f;
-  }
+}
 
-  .Title {
-    text-align: center;
-    font-weight: bold;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    display: block; /* Change from "inline-block" to "block" to center block-level elements */
-    margin: 0 auto; /* Set the left and right margins to "auto" to horizontally center */
-    max-width: 100%; /* Optionally, set a maximum width if needed */
-    color: #4f403f;
-  }
-
-  ul {
+ul {
     list-style: none;
-    text-align: center; /* Center the text within the ul element */
+    text-align: center;
     padding: 0;
-    margin-left: 10%; /* Add a 25% margin to the left */
-    color:#4a3632;
-  }
-  
-  li {
-    text-align: left; /* Align the text within each list item to the left */
+    margin: 0 auto; /* Changed to 'auto' for better centering */
+    color: #4a3632;
+}
+
+li {
+    text-align: left;
     margin: 0;
-    padding: 0.25rem 0; /* Add some vertical spacing between list items if desired */
-    display: block; /* Make each list item a block-level element */
-    clear: left; /* Ensure each list item starts at the same vertical position */
-  }
-  b {
+    padding: 0.25rem 0;
+    display: block;
+    clear: left;
+}
+b {
     font-weight: normal;
     color: black;
-  }
+}
 
-  @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
     .container {
-      font-size: 14px;
+        padding: 3em 1em; /* Reduced side padding on smaller screens */
+        font-size: 14px;
     }
-  }
+}
