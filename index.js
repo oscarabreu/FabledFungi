@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Select HTML elements by class name and fill them with data
     document.querySelector(".Taxon b").textContent = apiResponse.taxon_id;
-    document.querySelector(".Mushroom-Name").textContent = apiResponse.species_name;
+    document.querySelector(".Mushroom-Name").textContent = apiResponse.taxon_species_name;
     document.querySelector(".Common-Name b").textContent = apiResponse.common_name;
     document.querySelector(".Observer b").textContent = apiResponse.observer_id;
     document.querySelector(".Observed b").textContent = apiResponse.observed_on;
