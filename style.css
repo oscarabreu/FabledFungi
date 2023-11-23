@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #9b8c7d;
+  }
+  .container {
+    background-color: #ffffff;
+    font-size: 16px;
+    padding: 3em 2.8em;
+    width: 90vw;
+    max-width: 32em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em;
+  }
+  img {
+    display: block;
+    width: 50%;
+    margin: 1.8em auto 0 auto;
+  }
+  .Mushroom-Name {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: block; /* Change from "inline-block" to "block" to center block-level elements */
+    margin: 0 auto; /* Set the left and right margins to "auto" to horizontally center */
+    max-width: 100%; /* Optionally, set a maximum width if needed */
+    color: #4f403f;
+  }
+
+  .Title {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: block; /* Change from "inline-block" to "block" to center block-level elements */
+    margin: 0 auto; /* Set the left and right margins to "auto" to horizontally center */
+    max-width: 100%; /* Optionally, set a maximum width if needed */
+    color: #4f403f;
+  }
+
+  ul {
+    list-style: none;
+    text-align: center; /* Center the text within the ul element */
+    padding: 0;
+    margin-left: 10%; /* Add a 25% margin to the left */
+    color:#4a3632;
+  }
+  
+  li {
+    text-align: left; /* Align the text within each list item to the left */
+    margin: 0;
+    padding: 0.25rem 0; /* Add some vertical spacing between list items if desired */
+    display: block; /* Make each list item a block-level element */
+    clear: left; /* Ensure each list item starts at the same vertical position */
+  }
+  b {
+    font-weight: normal;
+    color: black;
+  }
+
+  @media screen and (max-width: 500px) {
+    .container {
+      font-size: 14px;
+    }
+  }
