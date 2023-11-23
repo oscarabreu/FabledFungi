@@ -8,7 +8,7 @@ body {
     background-color: #9b8c7d;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin on the body */
-    padding: 4rem 0; /* Add spacing at the top and bottom of the body */
+    padding: 4rem 4rem; /* Add spacing at the top and bottom of the body */
     display: flex;
     justify-content: center; /* Center the container horizontally */
     align-items: flex-start; /* Align the container to the top */
