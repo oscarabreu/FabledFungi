@@ -52,10 +52,19 @@ li {
     padding: 0.25rem 0;
     display: block;
     clear: left;
+    color: #241e1c;
 }
 b {
     font-weight: normal;
-    color: black;
+    font-style: italic;
+}
+
+a {
+    font-style: none;
+    text-decoration: none;
+    color: #241e1c;
+    font-style: italic;
+
 }
 
 @media screen and (max-width: 500px) {
