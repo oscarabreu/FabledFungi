@@ -13,6 +13,10 @@ Lambda/API outputs a random "Mushroom" from this S3 in the form of JSON data aft
 
 Content is displayed in FabledFungis.com [I know _fungi_ is the plural term. Please don't yell at me.] 
 
+## API:
+
+`https://8n31nzke69.execute-api.us-east-1.amazonaws.com/v1`
+
  ## Example:
   ```
   {"statusCode": 200, "body": "{\"taxon_id\":\"179750\",\"observer_id\":\"100940464\",\"observed_on\":\"8/30/07\",\"user_id\":\"4391274\",\"user_login\":\"cefreebury\",\"created_at\":\"2021-11-12 18:09:07
