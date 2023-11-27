@@ -6,12 +6,12 @@
 }
 body {
     background-color: #9b8c7d;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    margin: 0; /* Reset the default margin on the body */
-    padding: 4rem 4rem; /* Add spacing at the top and bottom of the body */
+    overflow-x: hidden; 
+    margin: 0; 
+    padding: 4rem 4rem; 
     display: flex;
-    justify-content: center; /* Center the container horizontally */
-    align-items: flex-start; /* Align the container to the top */
+    justify-content: center; 
+    align-items: flex-start; 
 }
 
 .container {
@@ -20,14 +20,14 @@ body {
     padding: 2em 1em;
     border-radius: 0.6em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Allow the container to grow as much as needed */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    max-width: 100%; 
+    overflow-y: auto; 
 }
 img {
     display: block;
-    width: 100%; /* Changed to 100% for better scaling on smaller screens */
-    max-height: 70vh; /* Set a maximum height relative to the viewport height */
-    height: auto; /* Maintain aspect ratio */
+    width: 80%; 
+    max-height: 70vh; 
+    height: auto; 
     margin: 1.8em auto 0 auto;
 }
 .Mushroom-Name, .Title {
@@ -45,7 +45,7 @@ ul {
     list-style: none;
     text-align: center;
     padding: 0;
-    margin: 0 auto; /* Changed to 'auto' for better centering */
+    margin: 0 auto; 
     color: #4a3632;
 }
 
@@ -72,7 +72,7 @@ a {
 
 @media screen and (max-width: 500px) {
     .container {
-        padding: 3em 1em; /* Reduced side padding on smaller screens */
+        padding: 3em 1em; 
         font-size: 14px;
     }
 }
