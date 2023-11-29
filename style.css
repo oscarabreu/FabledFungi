@@ -78,6 +78,9 @@ a {
         padding: 2em 1em; 
         font-size: 14px;
     }
+    body {
+        padding: 2em;
+    }
     img {
         height: 300;
         width: 400;
