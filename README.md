@@ -1,23 +1,28 @@
-# FabledFungi
-## API Deployment
+# FabledFungi v1
 
-v1 of API managed by AWS Eventbridge, API Gateway (GET/OPTION CORS Enabled), two AWS Lambdas - one invoked by Eventbridge another invoked by Gateway.
+## Summary
 
-v2 of API managed by API Gateway (GET/OPTION CORS Enabled), one AWS Lambda invoked by Gateway. 
+FabledFungi is a unique API hosted on AWS, born from a rich dataset of mushroom observations, spanning from 2008 to 2015, sourced from iNaturalist. This dataset was originally in CSV format and has been significantly enhanced with custom scripts. These scripts are designed to extract and augment various details such as observation dates, locations, names, and associated image URLs, enriching the original data.
 
-## Function:
+At its core, FabledFungi is designed to fetch random mushroom observation data, providing users not just with the image URL but also with a wealth of related metadata for each observation.
 
-S3 Bucket holds iNaturalist.nz Mushroom Observation data from 2008 - 2015. 
+This project represents the culmination of two primary objectives. Firstly, it served as a practical application of the knowledge I acquired while studying for the AWS Solutions Architect certification. Secondly, it offered a hands-on experience in backend web development. I've made all resources, including data, scripts, and web development tools, openly available for anyone interested in exploring, learning, or building upon this project.
 
-Lambda/API outputs a random "Mushroom" from this S3 in the form of JSON data after each invocation.
+## V1 - FabledFungis API
 
-Content is displayed in FabledFungis.com [I know _fungi_ is the plural term. Please don't yell at me.] 
+### Architecture:
+<p align="center">
+  <img src="https://github.com/oscarabreu/FabledFungi/assets/99779654/626f48ef-4891-4dcc-a5f8-8b7d40daaca9" alt="Screenshot 2023-11-27 at 3 15 57 PM">
+</p>
 
-## API:
+### Decisions:
+- **Website Hosting** - This static site is hosting using AWS Amplify, a fully-managed AWS service.
+- **API Taffic/Routing** - API Routing/Management is handled by the AWS API Gateway - a fully-managed AWS service.
+- **API Functionality** The FabledFungiAPI is designed solely for retrieving information, which means it only supports GET requests. Cross-Origin Resource Sharing (CORS) is enabled to allow the API to be accessed from different domains
+- **Dataset** - All mushroom observation URL+Metadata is stored as a JSON object in an s3 bucket named fungis3.
+- **Lambda** - Implemented in Python with the boto3 library, this Lambda calls ListObjectsV2, and retrieves a random index in an S3 bucket containing Mushroom Observations in the form of JSON. 
 
-`https://8n31nzke69.execute-api.us-east-1.amazonaws.com/v1`
-
- ## Example:
+### Sample API Response:
   ```
   {"statusCode": 200, "body": "{\"taxon_id\":\"179750\",\"observer_id\":\"100940464\",\"observed_on\":\"8/30/07\",\"user_id\":\"4391274\",\"user_login\":\"cefreebury\",\"created_at\":\"2021-11-12 18:09:07
 UTC\",\"updated_at\":\"2022-04-11 13:38:22 UTC\",\"license\":\"CC-BY-NC\",\"url\":\"https://www.inaturalist.org/observations/100940464\",\"image_url\":\"https://inaturalist-
@@ -28,10 +33,13 @@ Lichen\",\"taxon_kingdom_name\":\"Fungi\",\"taxon_phylum_name\":\"Ascomycota\",\
 ":\"Cladoniaceae\",\"taxon_genus_name\":\"Cladonia\",\"taxon_species_name\":\"Cladonia cariosa\"}", "headers": {"Content-Type": "application/json"}}
   ```
 
-My goal is to optimize this process as much as possible.
+### Lambda Performance
 
-Template Frontend:
+![Screenshot 2023-11-26 at 6 27 55 PM](https://github.com/oscarabreu/FabledFungi/assets/99779654/c3e7fa36-694c-4769-b073-0aa6ed4372cc)
 
-![Screenshot 2023-11-23 at 5 29 59 PM](https://github.com/oscarabreu/FabledFungi/assets/99779654/4262dca9-559f-4678-bfb5-432207cad2bc)
-![Screenshot 2023-11-23 at 5 30 06 PM](https://github.com/oscarabreu/FabledFungi/assets/99779654/3a452a19-189d-4606-8f7c-37ffd1e01d0f)
-![Screenshot 2023-11-23 at 5 30 19 PM](https://github.com/oscarabreu/FabledFungi/assets/99779654/ad047f36-af46-44e2-b19b-1849444852b2)
+### Frontend Performance
+![FabledFungi v1 - SS4](https://github.com/oscarabreu/FabledFungi/assets/99779654/93cee26c-7657-46b7-bc3b-09f74070e17d)
+
+### Network 
+![Screenshot 2023-11-27 at 1 33 50 PM](https://github.com/oscarabreu/FabledFungi/assets/99779654/5481c3dc-3e52-4992-a06a-18648813b6e7)
+
