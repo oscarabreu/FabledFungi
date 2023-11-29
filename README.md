@@ -43,15 +43,15 @@ This project represents the culmination of two primary objectives. Firstly, it s
   3. Before shipping the data back through the API Gateway, it generates a pre-signed URL from the S3 ImageURL so the client (AWS Amplify / Javascript) can securely fetch the S3 image data once received.
 
 ## Improvements: 
-- Frontend: v1 Largest Contentful Paint (LCP) Average = 3.475, v2 Largest Contentful Paint (LCP) Average = 0.850
-- Frontend: v1 First Contentful Paint (FCP) Average = .875, v2 First Contentful Paint (FCP) Average = .525
-- Frontend: v1 Cumulative Layout Shift (CLS) Average = .221, v2 Cumulative Layout Shift (CLS) Average = .060
-- Frontend: v1 PageSpeed Performance Average = 82, v2 PageSpeed Performance Average = 98.5
-- Backend: v1 **Lambda Duration Average** = 2038 ms, v2 **Lambda Duration Average** = 225 ms
-- Backend: v1 **Image Latency Average** = ~400ms, v2 **Image Latency Average** = 310.8ms 
+- Largest Contentful Paint (LCP) Average ... v1 = 3.475, v2 = 0.850
+- First Contentful Paint (FCP) Average ... v1 = .875, v2 = .525
+- Cumulative Layout Shift (CLS) Average ...  v1 = .221, v2 = .060
+- PageSpeed Performance Average ... v1 = 82, v2 = 98.5
+- **Lambda Duration Average** ... v1 = 2038 ms, v2 = 225 ms
+- **Image Latency Average** ... v1 = ~400ms, v2 = 310.8ms 
 
 ## Ideas for further improvements:
-- Set an EventBridge to cache 100 random keys from EC2 Linux (Redis) every hour, and let the browser generate a random token from 1-100 on every get requst. Implement caching on API Gateway so users can benefit from CDN caching.
+- Set an EventBridge to cache 100 random keys from EC2 Linux (Redis) every hour, and let the browser generate a random token from 1-100 on every get requst. Implement caching on API Gateway so users can benefit from CDN caching. Be sure to implement cache invalidation so that users are not stuck receiving the same data.
 - Implement CloudFront on S3 to further reduce the latency for the image request  
 
 # Images
