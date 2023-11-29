@@ -7,6 +7,8 @@ FabledFungi is a unique API hosted on AWS, born from a rich dataset of mushroom 
 At its core, FabledFungi is designed to fetch random mushroom observation data, providing users not just with the image URL but also with a wealth of related metadata for each observation.
 
 This project represents the culmination of two primary objectives. Firstly, it served as a practical application of the knowledge I acquired while studying for the AWS Solutions Architect certification. Secondly, it offered a hands-on experience in backend web development. I've made all resources, including data, scripts, and web development tools, openly available for anyone interested in exploring, learning, or building upon this project.
+
+**Concepts**: AWS Virtual Private Cloud, CORS, VPC Endpoints, Security Groups, NAT Gateway, API Gateway, S3, pre-Signed URL, Lambda (Python 11), Eventbridge, DynamoDB On-Demand, UURI, EC2 (Amazon Linux), Redis, Docker, Go Scripting, AWS Amplify, API Management, LCP, FCP, CLS, Amazon X-Ray
   
 ### Sample API Response:
 
