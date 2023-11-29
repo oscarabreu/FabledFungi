@@ -75,4 +75,8 @@ a {
         padding: 3em 1em; 
         font-size: 14px;
     }
+    img {
+        height: 300;
+        width: 400;
+    }
 }
