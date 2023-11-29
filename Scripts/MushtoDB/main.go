@@ -15,8 +15,8 @@ import (
 )
 
 type Mushroom struct {
-	SourceSpecies    string `dynamodbav:"Source#Species"` // Adjusted for DynamoDB attribute naming
-    ObservationID    string `dynamodbav:"Observation"` // Added sort key field 
+	SourceSpecies    string `dynamodbav:"Source#Species"`
+    ObservationID    string `dynamodbav:"Observation"`
     TaxonID       	 string `json:"taxon_id"`
     ObservedOn       string `json:"observed_on"`
     UserID           string `json:"user_id"`
@@ -52,7 +52,7 @@ func main() {
 	defer csvFile.Close()
 
 	reader := csv.NewReader(csvFile)
-	reader.Comma = ',' // CSV delimiter is a tab
+	reader.Comma = ',' 
 	if _, err := reader.Read(); err != nil {
 		log.Fatalf("failed to read header row, %v", err)
 	}
@@ -111,10 +111,10 @@ func main() {
 		}
 		fmt.Printf("Imported: %s\n", record[0])
 
-		// Put the item into DynamoDB
+	
         _, err = svc.PutItem(context.TODO(), &dynamodb.PutItemInput{
 			TableName: aws.String("Mushroom"),
-			Item: av, // av is a map[string]types.AttributeValue
+			Item: av, 
 		})
         if err != nil {
             log.Fatalf("failed to put record to DynamoDB, %v", err)

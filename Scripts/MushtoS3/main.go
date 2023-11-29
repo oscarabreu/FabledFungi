@@ -61,25 +61,22 @@ func main() {
         fileName := fmt.Sprintf("%s.jpg", mushroom.ObservationID)
         objectKey := fmt.Sprintf("iNaturalist/%s", fileName)
 
-        // Stream the image directly from the URL to S3
 		response, err := http.Get(mushroom.ImageURL)
 		if err != nil {
 			log.Fatalf("failed to download image, %v", err)
 		}
 		defer response.Body.Close()
 	
-		// Buffer the image data
 		buf := new(bytes.Buffer)
 		_, err = io.Copy(buf, response.Body)
 		if err != nil {
 			log.Fatalf("failed to buffer image data, %v", err)
 		}
 	
-		// Use the buffered data for S3 upload
 		_, err = s3Client.PutObject(context.TODO(), &s3.PutObjectInput{
 			Bucket: aws.String(bucket),
 			Key:    aws.String(objectKey),
-			Body:   bytes.NewReader(buf.Bytes()), // Use buffered data here
+			Body:   bytes.NewReader(buf.Bytes()), 
 		})
 		if err != nil {
 			log.Fatalf("failed to upload image to S3, %v", err)
