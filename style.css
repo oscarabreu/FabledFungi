@@ -33,12 +33,15 @@ img {
 .Mushroom-Name, .Title {
     text-align: center;
     font-weight: bold;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     display: block;
     margin: 0 auto;
     max-width: 100%;
     color: #4f403f;
+}
+
+.Mushroom-Name {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 ul {
@@ -72,7 +75,7 @@ a {
 
 @media screen and (max-width: 500px) {
     .container {
-        padding: 3em 1em; 
+        padding: 2em 1em; 
         font-size: 14px;
     }
     img {
