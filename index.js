@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".Family-Name b").textContent = apiResponse.TaxonFamilyName;
         document.querySelector(".Genus-Name b").textContent = apiResponse.TaxonGenusName;
         document.querySelector(".Species-Name b").textContent = apiResponse.TaxonSpeciesName;
-        const observerid = apiResponse.observerid.toString(); // Convert the ID to a string
+        const observerid = apiResponse.Observeration; 
         document.querySelector(".source-link").href = `https://www.inaturalist.org/observations/${observerid}`; // Set the href attribute
         document.querySelector(".User-Login b").textContent = apiResponse.userlogin;
         document.querySelector(".Description b").textContent = apiResponse.description;
