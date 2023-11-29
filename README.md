@@ -52,7 +52,8 @@ This project represents the culmination of two primary objectives. Firstly, it s
 
 ## Ideas for further improvements:
 - Set an EventBridge to cache 100 random keys from EC2 Linux (Redis) every hour, and let the browser generate a random token from 1-100 on every get requst. Implement caching on API Gateway so users can benefit from CDN caching. Be sure to implement cache invalidation so that users are not stuck receiving the same data.
-- Implement CloudFront on S3 to further reduce the latency for the image request  
+- Implement CloudFront on S3 to further reduce the latency for the image request
+- "Warm" lambdas using EventBridge invocations
 
 # Images
 
