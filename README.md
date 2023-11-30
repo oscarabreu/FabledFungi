@@ -45,12 +45,16 @@ This project represents the culmination of two primary objectives. Firstly, it s
   3. Before shipping the data back through the API Gateway, it generates a pre-signed URL from the S3 ImageURL so the client (AWS Amplify / Javascript) can securely fetch the S3 image data once received.
 
 ## Improvements: 
-- Largest Contentful Paint (LCP) Average ... v1 = 3.475, v2 = 0.850
-- First Contentful Paint (FCP) Average ... v1 = .875, v2 = .525
-- Cumulative Layout Shift (CLS) Average ...  v1 = .221, v2 = .060
-- PageSpeed Performance Average ... v1 = 82, v2 = 98.5
-- **Lambda Duration Average** ... v1 = 2038 ms, v2 = 225 ms
-- **Image Latency Average** ... v1 = ~400ms, v2 = 310.8ms 
+- Largest Contentful Paint (LCP) Average ... v1 = 3.475, v2 = 0.850 => **~4x improvement **
+- First Contentful Paint (FCP) Average ... v1 = .875, v2 = .525 => > **60% improvement**
+- Cumulative Layout Shift (CLS) Average ...  v1 = .221, v2 = .060 => **~3.6x improvement**
+- Lambda Duration Average ... v1 = 2038 ms, v2 = 225 ms => **~9x improvement**
+- Image Latency Average ... v1 = ~400ms, v2 = 310.8ms => **>25% improvement**
+
+Achieved by moving away from "GetObjectsV2" O(N) function call to list S3 objects. 
+Instead, used Redis for O(1) randomkey function with UUID/DynamoPartition-Sort Mapping to bypass this step entirely. 
+In addition, hosted my own S3 images, and implemented CloudFront for S3 (Short time - cannot afford running 24/7).
+Made this architecture significantly more secure by leveraging VPC, Endpoints, Security Groups, and IAM "Least-Privilege-Principle", 
 
 ## Ideas for further improvements:
 - Set an EventBridge to cache 100 random keys from EC2 Linux (Redis) every hour, and let the browser generate a random token from 1-100 on every get requst. Implement caching on API Gateway so users can benefit from CDN caching. Be sure to implement cache invalidation so that users are not stuck receiving the same data.
