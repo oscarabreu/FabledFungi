@@ -51,9 +51,9 @@ This project represents the culmination of two primary objectives. Firstly, it s
 - Lambda Duration Average ... v1 = 2038 ms, v2 = 225 ms => **~9x improvement**
 - Image Latency Average ... v1 = ~400ms, v2 = 310.8ms => **>25% improvement**
 
-Achieved by moving away from "GetObjectsV2" O(N) function call to list S3 objects. 
-Instead, used Redis for O(1) randomkey function with UUID/DynamoPartition-Sort Mapping to bypass this step entirely. 
-In addition, hosted my own S3 images, and implemented CloudFront for S3 (Short time - cannot afford running 24/7).
+Achieved by moving away from "GetObjectsV2" O(N) function call to list S3 objects. <br>
+Instead, used Redis for O(1) randomkey function with UUID/DynamoPartition-Sort Mapping to bypass this step entirely. <br>
+In addition, hosted my own S3 images, and implemented CloudFront for S3 (Short time - cannot afford running 24/7).<br>
 Made this architecture significantly more secure by leveraging VPC, Endpoints, Security Groups, and IAM "Least-Privilege-Principle", 
 
 ## Ideas for further improvements:
