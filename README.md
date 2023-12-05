@@ -1,5 +1,7 @@
 # FabledFungi v2
 
+Performant MushroomAPI (GET) built over AWS DynamoDB, S3, CloudFront/Amplify, EC2/Redis, EventBridge, Lambdas, API-Gateway.
+
 ## Summary
 
 FabledFungi is a unique API hosted on AWS, born from a rich dataset of mushroom observations, spanning from 2008 to 2015, sourced from iNaturalist. This dataset was originally in CSV format and has been significantly enhanced with custom scripts. These scripts are designed to extract and augment various details such as observation dates, locations, names, and associated image URLs, enriching the original data.
