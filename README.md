@@ -1,3 +1,5 @@
+[No longer live]
+
 # FabledFungi v2
 
 Performant MushroomAPI (GET) built over AWS DynamoDB, S3, CloudFront/Amplify, EC2/Redis, EventBridge, Lambdas, API-Gateway.
